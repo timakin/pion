@@ -125,8 +125,8 @@ gem 'rails_12factor'
 gem 'paperclip'
 
 # AccessCount
-gem 'ahoy_matey'
-gem 'activeuuid', '>= 0.5.0'
+#gem 'ahoy_matey'
+#gem 'activeuuid', '>= 0.5.0'
 
 # デフォルトのgem
 gem 'turbolinks'
