@@ -1,12 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<h2>
   <%= @product.title %>
-</p>
+</h2>
 
 <p>
-  <strong>Description:</strong>
   <%= @product.description %>
 </p>
 
@@ -20,6 +18,13 @@
   <strong>Reference:</strong>
   <%= @product.reference %>
 </p>
+
+<% if current_user %>
+<%= render 'comments/form' %>
+<% end %>
+<% @product.comments.each do |comment| %>
+	<p><%= comment.description %></p>
+<% end %>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

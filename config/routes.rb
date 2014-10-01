@@ -1,5 +1,6 @@
 Pion::Application.routes.draw do
   resources :products
+  resources :comments, :only => [:create]
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -7,6 +8,7 @@ Pion::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'products#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
