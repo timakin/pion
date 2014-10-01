@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+
+.backgroundColorBluredGray{
+	background-color: #F1F2F2;
+}

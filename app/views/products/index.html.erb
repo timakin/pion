@@ -1,31 +1,42 @@
-<h1>Listing products</h1>
+<div class="main backgroundColorBluredGray">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Reference</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Reference</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+          <tbody>
+            <% @products.each do |product| %>
+            <tr>
+              <td><%= product.title %></td>
+              <td><%= product.description %></td>
+              <td><%= product.reference %></td>
+              <td><%= link_to 'Show', product %></td>
+              <td><%= link_to 'Edit', edit_product_path(product) %></td>
+              <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
 
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.title %></td>
-        <td><%= product.description %></td>
-        <td><%= product.reference %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <br>
 
-<br>
+        <%= link_to 'New Product', new_product_path %>
 
-<%= link_to 'New Product', new_product_path %>
+      </div>    
+
+      <div class="col-md-2"></div>    
+
+    </div>
+  </div>
+</div>
